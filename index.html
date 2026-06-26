@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio – Jens Overkämping</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #030712 0%, #0b1528 50%, #030712 100%);
+            background-attachment: fixed; 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-color: #030712; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .main-container {
+            display: flex;
+            align-items: center;
+            gap: 30px; 
+            max-width: 800px;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(15, 23, 42, 0.85); 
+            backdrop-filter: blur(10px); 
+            border: 2px solid #00d2ff; 
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3); 
+            text-align: center;
+            max-width: 400px;
+        }
+        .profile-pic {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            object-position: top; 
+            border-radius: 50%;
+            border: 3px solid #00ffcc; 
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.4); 
+        }
+        h1 { color: #00d2ff !important; margin-top: 0; }
+        p { color: #ffffff !important; line-height: 1.6; }
+        strong { color: #00ffcc !important; }
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #00d2ff !important;
+            color: #030712 !important;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .button:hover { background-color: #00ffcc !important; }
+        @media (max-width: 600px) {
+            .main-container { flex-direction: column-reverse; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="card">
+            <h1>Jens Overkämping // Digitales Profil</h1>
+            <p>Willkommen auf meinem Bewerbungs-Dashboard. Aktuell absolviere ich eine berufliche Orientierung an der BBS Westmünsterland (Borken) mit Fokus auf IT-Infrastruktur und Systemintegration.</p>
+            <p><strong>Zielsetzung:</strong> Ausbildung zum Fachinformatiker für Systemintegration ab dem 25.08.2026.</p>
+            <div style="display: flex; flex-direction: column; gap: 12px; align-items: stretch; margin-top: 25px;">
+                <!-- Links greifen exakt auf die komplett kleingeschriebenen PDFs zu -->
+                <a href="./overkaemping_lebenslauf.pdf" target="_blank" class="button">📄 Lebenslauf & Anschreiben</a>
+                <a href="./overkaemping_zeugnisse.pdf" target="_blank" class="button">🎓 Schulzeugnisse & Zertifikate</a>
+                <a href="spiel.html" class="button">🚀 Coding-Erfolg: Mathe-Spiel.exe</a>
+            </div>
+        </div>
+        <img src="Neu02.jpg" alt="Mein Profilbild" class="profile-pic">
+    </div>
+</body>
+</html>
