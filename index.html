@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mein Start</title>
+    <title>Bewerbung – Jens Overkämping</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,8 +17,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; /* Fix: Verhindert abgeschnittenen Text bei viel Inhalt */
             margin: 0;
+            padding: 20px; /* Platzhalter für mobile Geräte */
+            box-sizing: border-box;
         }
 
         .main-container {
@@ -37,7 +39,7 @@
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 210, 255, 0.3); 
             text-align: center;
-            max-width: 350px;
+            max-width: 400px;
         }
         
         .profile-pic {
@@ -50,19 +52,20 @@
             box-shadow: 0 0 20px rgba(0, 255, 204, 0.4); 
         }
         
-        h1 { color: #00d2ff !important; }
-        p { color: #ffffff !important; line-height: 1.5; }
+        h1 { color: #00d2ff !important; margin-top: 0; }
+        p { color: #ffffff !important; line-height: 1.6; }
         strong { color: #00ffcc !important; }
         
         .button {
             display: inline-block;
             margin-top: 15px;
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #00d2ff !important;
             color: #030712 !important;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            transition: background-color 0.3s;
         }
         
         .button:hover {
@@ -82,14 +85,16 @@
     <div class="main-container">
         
         <div class="card">
-            <h1>Hallo zusammen! 👋</h1>
-            <p>Ich bin gerade in der BBS Borken und das ist meine erste HTML Webseite. Teste unten mein Mathe Spiel, viel glück.</p>
-            <p><strong>Mein Ziel:</strong> Produktiv sein und etwas Sinnvolles lernen!</p>
+            <h1>Hallo, ich bin Jens! 👋</h1>
+            <p>Aktuell absolviere ich eine berufliche Orientierung an der BBS Westmünsterland in Borken mit dem klaren Ziel, im IT-Bereich durchzustarten.</p>
+            <p>Diese Webseite ist mein erstes eigenes HTML/CSS-Projekt. Testen Sie gerne mein selbst programmiertes Mathe-Spiel!</p>
+            <p><strong>Mein Ziel:</strong> Eine erfolgreiche Ausbildung zum Fachinformatiker für Systemintegration ab dem 25.08.2026.</p>
             
             <a href="spiel.html" class="button">Mathe-Spiel starten 🧠</a>
         </div>
 
-        <img src="Neu02.jpg" alt="Mein Profilbild" class="profile-pic">
+        <!-- Fix: Dateiendung von .jpg auf .png geändert -->
+        <img src="Neu02.png" alt="Mein Profilbild" class="profile-pic">
 
     </div>
 
