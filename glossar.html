@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-Glossar – Jens Overkämping</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #030712 0%, #0b1528 50%, #030712 100%);
+            background-attachment: fixed;
+            color: #ffffff;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border: 2px solid #00d2ff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+            box-sizing: border-box;
+        }
+        h1, h2 { color: #00d2ff; margin-top: 0; }
+        h2 { margin-top: 30px; border-bottom: 1px solid rgba(0, 210, 255, 0.2); padding-bottom: 5px; }
+        p { line-height: 1.6; color: #e2e8f0; }
+        strong { color: #00ffcc; }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #00ffcc;
+            border: 1px solid #00ffcc;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .back-btn:hover { background-color: #00ffcc; color: #030712; box-shadow: 0 0 10px rgba(0, 255, 204, 0.4); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">← Zurück zum Profil</a>
+        <h1>📖 Systemintegration Fachglossar</h1>
+        <p>Zusammenfassung wichtiger Kernbegriffe moderner Unternehmensinfrastrukturen im Rahmen des Selbststudiums.</p>
+
+        <h2>Active Directory (AD)</h2>
+        <p>Der zentrale Verzeichnisdienst von Microsoft Windows Server Systemen. Es ermöglicht Administratoren, die gesamte Organisation von Benutzern, Computern, Berechtigungen und Gruppenrichtlinien an einem einzigen, zentralen Punkt sicher zu verwalten.</p>
+
+        <h2>Virtualisierung (Hyper-V / Proxmox)</h2>
+        <p>Das Aufteilen physischer Hardware-Ressourcen eines einzelnen Servers in mehrere voneinander isolierte, virtuelle Maschinen (VMs). Dies sorgt für maximale Hardware-Auslastung, enorme Stromersparnis und schnelle Datensicherungen.</p>
+
+        <h2>RAID-Systeme (Redundant Array of Independent Disks)</h2>
+        <p>Der Zusammenschluss mehrerer physischer Festplatten zu einem logischen Laufwerk. **RAID 1** spiegelt Daten für Ausfallsicherheit, während **RAID 5** Performance und Datenredundanz durch Paritätsdaten kombiniert.</p>
+
+        <h2>3-2-1 Backup-Regel</h2>
+        <p>Ein essenzielles Datensicherungskonzept: Es sollten mindestens **3 Kopien** der Daten existieren, auf **2 unterschiedlichen Medien** (z.B. NAS und externe Festplatte), wobei **1 Kopie komplett außerhalb** des Betriebs (z. B. Cloud-Backup oder Schließfach) gelagert wird.</p>
+    </div>
+
+</body>
+</html>
