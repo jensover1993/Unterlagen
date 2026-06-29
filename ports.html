@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port-Trainer – Jens Overkämping</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #030712 0%, #0b1528 50%, #030712 100%);
+            background-attachment: fixed;
+            color: #ffffff;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border: 2px solid #00d2ff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+            text-align: center;
+            box-sizing: border-box;
+        }
+        h1 { color: #00d2ff; margin-top: 0; }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #00ffcc;
+            border: 1px solid #00ffcc;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .back-btn:hover { background-color: #00ffcc; color: #030712; box-shadow: 0 0 10px rgba(0, 255, 204, 0.4); }
+        .port-display { font-size: 48px; font-weight: bold; color: #00ffcc; margin: 30px 0; text-shadow: 0 0 15px rgba(0, 255, 204, 0.4); }
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .option-btn {
+            padding: 15px;
+            background: rgba(3, 7, 18, 0.6);
+            border: 1px solid #00d2ff;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .option-btn:hover { background: #00d2ff; color: #030712; }
+        .score { margin-top: 25px; font-size: 18px; color: #a0aec0; }
+        .score strong { color: #00ffcc; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">← Zurück zum Profil</a>
+        <h1>⚡ Port- & Protokoll-Trainer</h1>
+        <p>Welches IT-Protokoll nutzt standardmäßig diesen Port? Testen Sie Ihr Wissen.</p>
+        
+        <div class="port-display" id="portNum">Port 22</div>
+        
+        <div class="options-grid" id="optionsContainer">
+            <!-- Buttons werden per JS geladen -->
+        </div>
+
+        <div class="score">Punkte: <strong id="scoreVal">0</strong></div>
+    </div>
+
+    <script>
+        const quizData = [
+            { port: "Port 22", correct: "SSH (Secure Shell)", wrong: ["FTP", "HTTP", "DNS"] },
+            { port: "Port 80", correct: "HTTP (Webtraffic)", wrong: ["HTTPS", "SSH", "DHCP"] },
+            { port: "Port 443", correct: "HTTPS (Sicheres Web)", wrong: ["HTTP", "FTP", "SMTP"] },
+            { port: "Port 53", correct: "DNS (Namensauflösung)", wrong: ["DHCP", "SSH", "RDP"] },
+            { port: "Port 67 / 68", correct: "DHCP (IP-Vergabe)", wrong: ["DNS", "FTP", "SMTP"] },
+            { port: "Port 3389", correct: "RDP (Remote Desktop)", wrong: ["SSH", "HTTP", "MySQL"] }
+        ];
+
+        let currentQuestion = {};
+        let score = 0;
+
+        function loadQuestion() {
+            currentQuestion = quizData[Math.floor(Math.random() * quizData.length)];
+            document.getElementById('portNum').innerText = currentQuestion.port;
+            
+            let answers = [currentQuestion.correct, ...currentQuestion.wrong];
+            answers.sort(() => Math.random() - 0.5); // Mischen
+
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = "";
+            
+            answers.forEach(ans => {
+                const btn = document.createElement('button');
+                btn.className = "option-btn";
+                btn.innerText = ans;
+                btn.onclick = () => checkAnswer(ans);
+                container.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selected) {
+            if(selected === currentQuestion.correct) {
+                score++;
+                alert("Richtig gelöst!");
+            } else {
+                score = 0;
+                alert(`Falsch! Richtig gewesen wäre: ${currentQuestion.correct}`);
+            }
+            document.getElementById('scoreVal').innerText = score;
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
